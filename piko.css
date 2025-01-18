@@ -1,0 +1,191 @@
+/* General styling */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: url('wall.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Center text styling */
+.center-text {
+    text-align: center;
+    font-size: 1.5em;
+}
+
+/* Glowing text animation */
+.glowing-text {
+    font-size: 3em;
+    color: #0ff;
+    text-align: center;
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff, 0 0 70px #0ff;
+    }
+    to {
+        text-shadow: 0 0 20px #0ff, 0 0 30px #0ff, 0 0 40px #0ff, 0 0 50px #0ff, 0 0 60px #0ff, 0 0 70px #0ff, 0 0 80px #0ff;
+    }
+}
+
+/* List styling */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Glowing button styling */
+.glow-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background: linear-gradient(45deg, #ff0000, #0000ff);
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(0, 0, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+    animation: glow-button 1.5s infinite alternate;
+}
+
+@keyframes glow-button {
+    from {
+        box-shadow: 0 0 10px rgba(255, 0, 0, 0.8), 0 0 20px rgba(0, 0, 255, 0.8);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(0, 0, 255, 0.8), 0 0 30px rgba(255, 0, 0, 0.8);
+    }
+}
+
+.glow-button:hover {
+    transform: scale(1.1);
+}
+
+/* Navigation button styling */
+.nav-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    color: #fff;
+    background: linear-gradient(45deg, #ffffff, #ffffff); /* Glowing white */
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 2px 2px 5px #000; /* Dark outline */
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
+    transition: all 0.3s ease-in-out;
+    animation: glow-nav-button 1.5s infinite alternate;
+}
+
+@keyframes glow-nav-button {
+    from {
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.8);
+    }
+    to {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.8);
+    }
+}
+
+.nav-button:hover {
+    transform: scale(1.1);
+}
+
+/* Glitch effect styling */
+.glitch {
+    position: relative;
+    font-size: 2em;
+    color: #fff;
+    text-shadow: 2px 2px 5px #000; /* Dark outline */
+    animation: glitch 1s infinite;
+}
+
+.glitch::before, .glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+}
+
+.glitch::before {
+    left: 2px;
+    text-shadow: -2px 0 red;
+    clip: rect(24px, 550px, 90px, 0);
+    animation: glitch-before 0.3s infinite;
+}
+
+.glitch::after {
+    left: -2px;
+    text-shadow: -2px 0 blue;
+    clip: rect(85px, 550px, 140px, 0);
+    animation: glitch-after 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% {
+        transform: skew(0.3deg);
+    }
+    2%, 8% {
+        transform: skew(0.3deg) translate(5px);
+    }
+    10% {
+        transform: skew(0.3deg) translate(-5px);
+    }
+    12%, 17% {
+        transform: skew(0.3deg) translate(5px);
+    }
+    20%, 25% {
+        transform: skew(0.3deg) translate(0);
+    }
+    27% {
+        transform: skew(0.3deg) translate(-5px);
+    }
+    30%, 35%, 40% {
+        transform: skew(0.3deg) translate(0);
+    }
+    42% {
+        transform: skew(0.3deg) translate(-5px);
+    }
+    45% {
+        transform: skew(0.3deg) translate(5px);
+    }
+    50%, 55% {
+        transform: skew(0.3deg) translate(0);
+    }
+    57% {
+        transform: skew(0.3deg) translate(5px);
+    }
+    60%, 65%, 75% {
+        transform: skew(0.3deg) translate(0);
+    }
+    77%, 82%, 85% {
+        transform: skew(0.3deg) translate(-5px);
+    }
+    87%, 92% {
+        transform: skew(0.3deg) translate(5px);
+    }
+    95% {
+        transform: skew(0.3deg) translate[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/blocklet/development-guide/tree/532870eb469508c74f1185266abd1578a2e8acb9/src%2Fdeveloper%2Fstatic-blocklet%2Findex.md?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "1")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/EWCMF/laravel-cloudstorage/tree/eb9f382563b4faaa619fb988fa37705013a8d38d/resources%2Fviews%2Flayouts%2Fapp.blade.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "2")[43dcd9a7-70db-4a1f-b0ae-981daa162054](https://github.com/FireWolf-kPanel/kpanelv3.3-opensource/tree/58163c270c954b5fc6e4849d376df28c9e17489a/index.php?citationMarker=43dcd9a7-70db-4a1f-b0ae-981daa162054 "3")
